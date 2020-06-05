@@ -1,0 +1,57 @@
+{% extends 'base.html'%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+{% block styles%}
+    {{ super() }}
+    <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet"> 
+{% endblock %}
+</head>
+
+{% block content %}
+<body>
+<div class="heading">
+    <h1>TOPS NEWS SITE</h1>
+
+    <h2>Here we bring the latest news updates from all over the world</h2>
+    <div class="container">
+        <form>
+            <input type="text" name="news_query" placeholder="Search for a Source" class="form-control">
+            <input type="submit" value="Submit" class="btn btn-default">
+        </form>
+    </div>
+    
+</div>
+<p class="pa">Below are the sources</p>
+<br><br>
+
+<div class="row" id="sources">
+    <div class="col-md-6">
+        
+            {% for top_new in sources %}
+            <h3><strong>Would you like to find the top stories from this Source:</strong>
+                <a href='{{ top_new.url }}'>
+                    {{ top_new.name}}
+                </a>
+            </h3>
+    </div>
+    <div class="col-md-6">
+        <p><strong><i>Description of the source:</i></strong></p>
+        <p>{{ top_new.description }}</p>
+        
+    {% endfor %} 
+     
+
+{{ title }}
+</div>
+
+    </div>
+
+</div>
+
+{% endblock %}
+

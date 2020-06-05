@@ -1,0 +1,31 @@
+{% extends 'base.html'%}
+
+    {% block content%}
+
+    <div class="container">
+    {% for top_article in get_articles %}
+    <div class="card">
+            <ul>
+                    <div class="card-header">
+                     <a href={{top_article.url}}>
+                    {{top_article.title}}
+                    </a>
+                </div>
+                
+                <li>
+                    <div class="card-body">
+                    {{top_article.description }}
+                    </div>
+                </li>
+                <li>This is the time and date this article was published:
+                    <div class="card-footer">
+                    {{top_article.publishedAt}}
+                    </div>
+                </li>
+            </ul>
+         {% endfor %} 
+    </div>
+</div>
+    
+
+{% endblock %}
