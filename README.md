@@ -18,6 +18,7 @@ __export FLASK_ENV=development__
 __flask run__
 
 ##### Link to the live link
+https://the-news-list.herokuapp.com
 
 ##### License
 Copyright 2020 James Maina Mirara
